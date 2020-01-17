@@ -11,7 +11,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Cidadao {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String nome;
 	private String sobreNome;

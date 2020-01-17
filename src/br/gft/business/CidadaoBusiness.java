@@ -12,8 +12,8 @@ public void inserir(Cidadao cidadao)throws BusinessException{
 			throw new BusinessException("Erro: Nome não pode ser vazio");
 		}
 			
-		Dao<Cidadao> CategoriaDao = FabricaDao.criarCidadaoDao();
-		CategoriaDao.inserir(cidadao);
+		Dao<Cidadao> cidadaoDao = FabricaDao.criarCidadaoDao();
+		cidadaoDao.inserir(cidadao);
 	}
 
 }

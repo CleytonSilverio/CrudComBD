@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class Conexao {
 
-	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("crudbd");
+	static EntityManagerFactory emf = Persistence.createEntityManagerFactory("crud");
 
 	public EntityManager createEntityManager() {
 		return emf.createEntityManager();

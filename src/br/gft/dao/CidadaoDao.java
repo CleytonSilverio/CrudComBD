@@ -12,49 +12,43 @@ import br.gft.rest.Dao;
 
 public class CidadaoDao implements Dao<Cidadao> {
 
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("cidadao");
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("aulajpa");
 
 	public void inserir(Cidadao cidadao) {
 		EntityManager em = emf.createEntityManager();
 
 		em.getTransaction().begin();
-		System.out.println(cidadao);
-		try {
-			em.persist(cidadao);
-			em.getTransaction().commit();
-
-		} catch (Exception e) {
-			System.out.println("---ERRO " + e.getMessage());
-		}
-		System.out.println("Ok" + cidadao);
+		em.persist(cidadao);
+		em.getTransaction().commit();	
 	}
 
 	public void alterar(Cidadao cidadao) {
-		EntityManager em = emf.createEntityManager();
-
-		em.getTransaction().begin();
-		em.merge(cidadao);
-		em.getTransaction().commit();
+//		EntityManager em = emf.createEntityManager();
+//
+//		em.getTransaction().begin();
+//		em.merge(cidadao);
+//		em.getTransaction().commit();
 	}
 
 	public void excluir(Cidadao cidadao) {
-		EntityManager em = emf.createEntityManager();
-
-		em.getTransaction().begin();
-		em.remove(em.merge(cidadao));
-		em.getTransaction().commit();
+//		EntityManager em = emf.createEntityManager();
+//
+//		em.getTransaction().begin();
+//		em.remove(em.merge(cidadao));
+//		em.getTransaction().commit();
 	}
 
 
 	public List<Cidadao> listar() {
-		EntityManager em = emf.createEntityManager();
-		Query q = em.createQuery("select c from Cidadao c");
-		return q.getResultList();
+//		EntityManager em = emf.createEntityManager();
+//		Query q = em.createQuery("select c from Cidadao c");
+     	return null; //q.getResultList();
 	}
 
 	public Cidadao buscarPorCodCidadao(Integer codCidadao) {
-		EntityManager em = emf.createEntityManager();
-		return em.find(Cidadao.class, codCidadao);
+//		EntityManager em = emf.createEntityManager();
+//		return em.find(Cidadao.class, codCidadao);
+		return null;
 	}
 
 	@Override
